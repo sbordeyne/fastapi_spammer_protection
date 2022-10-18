@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fastapi_spammer_protection"
-version = "1.0.0"
+version = "1.0.1"
 description = "Middleware to protect a FastAPI app against spammers that try to exploit known vulnerabilities"
 authors = ["Dogeek <simon.bordeyne@gmail.com>"]
 license = "MIT"
