@@ -2,7 +2,7 @@
 from .url import URL
 
 
-urls = set(
+urls = {
     URL('GET', '/stalker_portal/c/version.js'),
     URL('GET', '//web/.env'),
     URL('GET', '/frontend_dev.php/%24'),
@@ -623,4 +623,4 @@ urls = set(
     URL('GET', '/XSWZ'),
     URL('GET', '/cgi-bin/%3Bcat%24IFS/etc/passwd'),
     URL('GET', '/base.aspx'),
-)
+}

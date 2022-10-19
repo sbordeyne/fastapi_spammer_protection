@@ -11,11 +11,4 @@ def php(request: Request):
 
 
 def default_matcher(request: Request):
-    for url in urls:
-        if (
-            request.method == url.method and
-            request.url.path == url.path and
-            request.url.query == url.query
-        ):
-            return True
-    return False
+    return request in urls

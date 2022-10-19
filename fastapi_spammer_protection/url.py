@@ -1,11 +1,24 @@
 import typing
 from urllib.parse import urlsplit, SplitResult, urljoin
 
+from fastapi import Request
+
 
 class URL:
     def __init__(self, method: str, url: str):
         self.method = method
-        self._url = urljoin('https://hostname:port', url)
+        self._raw_url = url
+        self._url = urljoin('https://hostname:8080', url)
+
+    def __eq__(self, other: Request):
+        return (
+            other.method == self.method and
+            other.url.path == self.path and
+            other.url.query == self.query
+        )
+
+    def __hash__(self):
+        return hash(f'{self.method} {self._url}')
 
     @property
     def components(self) -> SplitResult:
