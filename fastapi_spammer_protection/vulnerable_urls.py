@@ -2,7 +2,7 @@
 from .url import URL
 
 
-urls = (
+urls = set(
     URL('GET', '/stalker_portal/c/version.js'),
     URL('GET', '//web/.env'),
     URL('GET', '/frontend_dev.php/%24'),
