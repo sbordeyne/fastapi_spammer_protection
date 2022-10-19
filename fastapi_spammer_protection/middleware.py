@@ -63,15 +63,15 @@ class SpammerProtection:
         Saves the banlist to the disk. The format is just the IPs separated by
         newline characters for easy parsing with third-party tools or scripts.
         '''
-        with open(self.banlist_file_path, 'r') as file_handle:
-            self.banlist.extend(file_handle.readlines())
+        with open(self.banlist_file_path, 'w') as file_handle:
+            file_handle.write('\n'.join(self.banlist))
 
     def load_banlist(self):
         '''
         Loads the banlist file.
         '''
-        with open(self.banlist_file_path, 'w') as file_handle:
-            file_handle.write('\n'.join(self.banlist))
+        with open(self.banlist_file_path, 'r') as file_handle:
+            self.banlist.extend(file_handle.readlines())
 
     def parse_header(self, header_value: str):
         '''
